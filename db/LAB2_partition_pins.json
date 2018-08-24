@@ -8,6 +8,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "x",
+					"strict" : false
+				},
+				{
 					"name" : "key[0]",
 					"strict" : false
 				},
@@ -116,11 +120,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "ps2_data",
+					"name" : "ps2_clock",
 					"strict" : false
 				},
 				{
-					"name" : "ps2_clock",
+					"name" : "ps2_data",
 					"strict" : false
 				}
 			]

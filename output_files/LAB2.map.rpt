@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LAB2
-Fri Aug 24 09:51:41 2018
+Fri Aug 24 11:04:57 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -43,16 +43,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Aug 24 09:51:41 2018       ;
+; Analysis & Synthesis Status        ; Successful - Fri Aug 24 11:04:57 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; LAB2                                        ;
 ; Top-level Entity Name              ; LAB2                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 140                                         ;
-;     Total combinational functions  ; 124                                         ;
-;     Dedicated logic registers      ; 94                                          ;
-; Total registers                    ; 94                                          ;
-; Total pins                         ; 30                                          ;
+; Total logic elements               ; 142                                         ;
+;     Total combinational functions  ; 130                                         ;
+;     Dedicated logic registers      ; 98                                          ;
+; Total registers                    ; 98                                          ;
+; Total pins                         ; 31                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -177,30 +177,30 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 140         ;
+; Estimated Total logic elements              ; 142         ;
 ;                                             ;             ;
-; Total combinational functions               ; 124         ;
+; Total combinational functions               ; 130         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 38          ;
-;     -- 3 input functions                    ; 10          ;
-;     -- <=2 input functions                  ; 76          ;
+;     -- 4 input functions                    ; 51          ;
+;     -- 3 input functions                    ; 1           ;
+;     -- <=2 input functions                  ; 78          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 67          ;
-;     -- arithmetic mode                      ; 57          ;
+;     -- normal mode                          ; 72          ;
+;     -- arithmetic mode                      ; 58          ;
 ;                                             ;             ;
-; Total registers                             ; 94          ;
-;     -- Dedicated logic registers            ; 94          ;
+; Total registers                             ; 98          ;
+;     -- Dedicated logic registers            ; 98          ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 30          ;
+; I/O pins                                    ; 31          ;
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; reset~input ;
-; Maximum fan-out                             ; 80          ;
-; Total fan-out                               ; 680         ;
-; Average fan-out                             ; 2.45        ;
+; Maximum fan-out                             ; 95          ;
+; Total fan-out                               ; 727         ;
+; Average fan-out                             ; 2.51        ;
 +---------------------------------------------+-------------+
 
 
@@ -209,7 +209,7 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |LAB2                      ; 124 (124)           ; 94 (94)                   ; 0           ; 0            ; 0       ; 0         ; 30   ; 0            ; |LAB2               ; LAB2        ; work         ;
+; |LAB2                      ; 130 (130)           ; 98 (98)                   ; 0           ; 0            ; 0       ; 0         ; 31   ; 0            ; |LAB2               ; LAB2        ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -219,12 +219,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 94    ;
+; Total registers                              ; 98    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 75    ;
+; Number of registers using Asynchronous Clear ; 87    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 30    ;
+; Number of registers using Clock Enable       ; 26    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -245,24 +245,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 30                          ;
-; cycloneiii_ff         ; 94                          ;
+; boundary_port         ; 31                          ;
+; cycloneiii_ff         ; 98                          ;
 ;     CLR               ; 61                          ;
-;     ENA               ; 16                          ;
-;     ENA CLR           ; 14                          ;
-;     plain             ; 3                           ;
-; cycloneiii_lcell_comb ; 126                         ;
-;     arith             ; 57                          ;
-;         2 data inputs ; 56                          ;
+;     ENA CLR           ; 26                          ;
+;     plain             ; 11                          ;
+; cycloneiii_lcell_comb ; 132                         ;
+;     arith             ; 58                          ;
+;         2 data inputs ; 58                          ;
+;     normal            ; 74                          ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 18                          ;
 ;         3 data inputs ; 1                           ;
-;     normal            ; 69                          ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 17                          ;
-;         3 data inputs ; 9                           ;
-;         4 data inputs ; 38                          ;
+;         4 data inputs ; 51                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.50                        ;
-; Average LUT depth     ; 2.81                        ;
+; Average LUT depth     ; 2.94                        ;
 +-----------------------+-----------------------------+
 
 
@@ -281,27 +279,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Aug 24 09:51:18 2018
+    Info: Processing started: Fri Aug 24 11:04:33 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LAB2 -c LAB2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file lab2.vhd
-    Info (12022): Found design unit 1: LAB2-PS2 File: C:/Users/Estudiante/Desktop/LAB2/LAB2.vhd Line: 22
+    Info (12022): Found design unit 1: LAB2-PS2 File: C:/Users/Estudiante/Desktop/LAB2/LAB2.vhd Line: 25
     Info (12023): Found entity 1: LAB2 File: C:/Users/Estudiante/Desktop/LAB2/LAB2.vhd Line: 7
 Info (12127): Elaborating entity "LAB2" for the top level hierarchy
-Info (13000): Registers with preset signals will power-up high File: C:/Users/Estudiante/Desktop/LAB2/LAB2.vhd Line: 86
+Info (13000): Registers with preset signals will power-up high File: C:/Users/Estudiante/Desktop/LAB2/LAB2.vhd Line: 89
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 170 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 173 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 26 output pins
-    Info (21061): Implemented 140 logic cells
+    Info (21059): Implemented 27 output pins
+    Info (21061): Implemented 142 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4817 megabytes
-    Info: Processing ended: Fri Aug 24 09:51:41 2018
-    Info: Elapsed time: 00:00:23
+    Info: Peak virtual memory: 4813 megabytes
+    Info: Processing ended: Fri Aug 24 11:04:57 2018
+    Info: Elapsed time: 00:00:24
     Info: Total CPU time (on all processors): 00:00:41
 
 

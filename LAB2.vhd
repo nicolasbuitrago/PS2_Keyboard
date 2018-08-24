@@ -9,7 +9,10 @@ port(
 	clk : in std_logic;	--Reloj del sistema						--PINY2
 	clkLED : out std_logic; 
 	ps2_data    :   in std_logic;				--Permite que el conteo avance	  					--sw16
-	ps2_clock : in  std_logic;			
+	ps2_clock : in  std_logic;	
+	
+	x : out std_logic := '0';
+	
 	reset : in std_logic;			--									
 	key : out std_logic_vector(10 downto 0);
 	disp1: out std_logic_vector(6 downto 0);	--Vector que almacena el primer digito del conteo		--HEX0
@@ -87,15 +90,18 @@ begin
 			i<=0;
 			disp1<=num2disp(X"0");
 			disp2<=num2disp(X"0");
+			key<=(others=>'0');
+			x<='0';
 --			filter_reg <= (others => 'O');
 --			f_ps2c_reg<= '0' ;
 		elsif (ps2_clock' event and ps2_clock = '0') then
 		
-			if (i>10)then
-				i<=0;
-			end if;
+--			if (i>10)then
+--				i<=0;
+--				x<='1';
+--			end if;
 		
-			key(i)<=ps2_data;
+--			key(i)<=ps2_data;
 			code(i)<=ps2_data;
 			
 			i<=i+1;
@@ -103,11 +109,10 @@ begin
 			if(i=10) then
 				disp1<=num2disp(code(4 downto 1));
 				disp2<=num2disp(code(8 downto 5));
---				i <= 0;
+				key<=code;
+				i<=0;
+				x<='1';
 			end if;
-			
-			
-			
 --			current_filter<= next_filter;
 --			f_ps2c_reg <= f_ps2c_next ;
 		end if;
