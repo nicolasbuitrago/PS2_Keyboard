@@ -1,0 +1,169 @@
+library ieee ;
+use ieee.std_logic_1164.all;
+use IEEE.NUMERIC_STD.all;
+
+-----------------------------------------------------
+
+entity pcfhex is
+port(	a    :   in std_logic;				--Permite que el conteo avance	  					--sw16
+	clk_50Mhz : in  std_logic;			--Reloj del sistema						--PINY2
+	frec :   in std_logic;				--Dice  en que frecuencia ira  el conteo				--sw15
+	int1 :   in std_logic;				--Junto con int2 decide que aumento/decremento tendra el conteo	--sw13	
+	int2 :   in std_logic; 				--Junto con int1 decide que aumento/decremento tendra el conteo	--sw12
+	sent :   in std_logic;				--Si es 0 el conteo aumenta si es 1 decrementa		--sw14
+	reset:   in std_logic;				--Permite reiniciar el conteo a 0 	 				--sw17
+	clk  :   out std_logic;				--LED que permite ver las iteraciones del reloj   			--LED16
+	x    :   out std_logic;				--									--LED17
+	disp1: out std_logic_vector(6 downto 0);	--Vector que almacena el primer digito del conteo		--HEX0
+	disp2: out std_logic_vector(6 downto 0)	--Vector que almacena el segundo digito del conteo		--HEX1
+);
+end pcfhex;
+
+-----------------------------------------------------
+
+architecture FSM of pcfhex is
+
+--
+
+    -- define the states of FSM model
+
+    type state_type is (S0, S1, S2, S3,S4,S5,S6,S7,S8,S9,SA,SB,SC,SD,SE,SF); --Estados para cada uno de los digitos
+	-- signal next_state, current_state, next_state2, current_state2: state_type;
+	signal next_state, current_state : unsigned(7 downto 0); --Almacenan el valor  que se esta mostrando y el siguiente a mostrar
+--	 signal count_1,count_2,count_3,count_4: std_logic_vector(3 downto 0);
+	 signal prescaler : unsigned(27 downto 0); -- Permite el cambio de frecuencia entre nuestro reloj y el del sistema
+	 signal pre : unsigned(27 downto 0);  -- almacena la frecuencia que se usara
+	 signal clk_2Hz_i : std_logic;
+	 
+	-- Funcion que permite tranformar un numero Hexadecimal a un array que
+	 function num(cs : unsigned(3 downto 0)) 
+	 	return std_logic_vector is
+		VARIABLE disp : std_logic_vector(6 downto 0);
+		begin
+			case cs is
+		
+				when X"0" => disp := "1000000";
+	
+				when X"1" => disp := "1111001";
+	
+				when X"2" => disp := "0100100";
+	
+				when X"3" => disp := "0110000";
+					
+				when X"4" => disp := "0011001";
+					
+				when X"5" => disp := "0010010";
+					
+				when X"6" => disp := "0000010";
+				
+				when X"7" => disp := "1111000";
+				
+				when X"8" => disp := "0000000";
+				
+				when X"9" => disp := "0011000";
+					
+				when X"A" => disp := "0001000";
+					
+				when X"B" => disp := "0000011";
+					
+				when X"C" => disp := "1000110";
+					
+				when X"D" => disp := "0100001";
+					
+				when X"E" => disp := "0000110";
+				
+				when X"F" => disp := "0001110";
+			end case;
+			return std_logic_vector(disp);
+		end num;
+
+
+begin
+
+	--Proceso que usa el reloj del sistema y ajusta el conteo a la frecuencia deseada
+	gen_clk : process (clk_50Mhz, reset)
+	  begin  -- process gen_clk
+		 if reset = '1' then
+			clk_2Hz_i   <= '0';
+			prescaler   <= (others => '0');
+		 elsif rising_edge(clk_50Mhz) then   -- rising clock edge
+			if frec='0' then
+				pre<=X"2FAF080"; -- Valor para el Altera
+				-- pre<= X"0000003" ;--  Valor para la simulacion
+			else
+				pre<=X"0BEBC20"; -- Valor para el Altera
+				--pre<= X"0000001"; --  Valor para la simulacion
+			end if;
+			if prescaler = pre then     -- 12 500 000 in hex
+			  prescaler   <= (others => '0');
+			  clk_2Hz_i   <= not clk_2Hz_i;
+			else
+			  prescaler <= prescaler + "1";
+			end if;
+		 end if;
+	  end process gen_clk;
+
+	clk <= clk_2Hz_i;
+					
+    
+    -- cocurrent process#1: Proceso que se encarga del reset y el cambio entre estados
+    state_reg: process(clk_2Hz_i, reset)
+    begin
+
+	if (reset='1') then   --Si reset es 1 se encarga de establecesr el conteo a 00
+		current_state <= (others => '0');
+	elsif (clk_2Hz_i'event and clk_2Hz_i='1') then --Cuando el reloj cambia y esta en 1 entra
+		current_state <= next_state;   --Se pasa del estado actual al estado siguiente
+	end if;
+    end process;						  
+
+		
+		
+    -- cocurrent process#2: Proceso que se encarga de establecer el valor del siguiente estado
+	 --		y se encarga de darle valor a disp1 y disp2
+    comb_logic: process(current_state, a)
+    begin
+
+	-- Si a es 0 no permite que el conteo avance, haciendo que el estado siguiente seael estado actual
+	if a='0' then
+		next_state <= current_state;
+	elsif a='1' then
+		-- Si es 1 valida el sentido del conteo, si es 1 significa que el conteo incrementa
+		if sent='0' then
+		-- Valida cuanto es lo que debe incrementar
+			if int1='0' and int2='0' then
+				next_state <= current_state + X"1";
+			elsif int1='1' and int2='0' then
+				next_state <= current_state + X"2";
+			elsif int1='1' and int2='1' then
+				next_state <= current_state + X"3";
+			end if;
+			--Si el siguiente estado es mayor que FF se reinicia el conteo a 00
+			if next_state>X"FF" then
+				-- next_state <= (others => '0') + next_state- X"F";	
+				next_state<=X"00";
+			end if;
+
+		else --En el caso de que sent sea 1 el conteo disminuye
+			if int1='0' and int2='0' then
+				next_state <= current_state - X"1";
+			elsif int1='1' and int2='0' then
+				next_state <= current_state - X"2";
+			elsif int1='1' and int2='1' then
+				next_state <= current_state - X"3";
+			end if;
+			--Si el siguiente estado es menor que 00 elsiguiente estado pasa a ser FF
+			if next_state<X"0" then
+				-- next_state <= (others => '0') + next_state- X"F";
+				next_state<= X"FF";				
+			end if;
+		end if;
+		
+		disp1 <= num(current_state(3 downto 0));--Se le asigna a disp1 el primer digito
+		disp2 <= num(current_state(7 downto 4));--Se le asigna a disp2 el segundo digito
+		
+	end if;
+	
+   end process;
+
+end FSM;
