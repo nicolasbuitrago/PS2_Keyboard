@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LAB2
-Fri Aug 24 11:04:57 2018
+Mon Sep 03 11:08:53 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -13,11 +13,15 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Inverted Register Statistics
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  8. State Machine - |LAB2|estado
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +47,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Aug 24 11:04:57 2018       ;
+; Analysis & Synthesis Status        ; Successful - Mon Sep 03 11:08:53 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; LAB2                                        ;
 ; Top-level Entity Name              ; LAB2                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 142                                         ;
-;     Total combinational functions  ; 130                                         ;
-;     Dedicated logic registers      ; 98                                          ;
-; Total registers                    ; 98                                          ;
-; Total pins                         ; 31                                          ;
+; Total logic elements               ; 187                                         ;
+;     Total combinational functions  ; 172                                         ;
+;     Dedicated logic registers      ; 120                                         ;
+; Total registers                    ; 120                                         ;
+; Total pins                         ; 42                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -163,45 +167,45 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                     ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path              ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------+---------+
-; LAB2.vhd                         ; yes             ; User VHDL File  ; C:/Users/Estudiante/Desktop/LAB2/LAB2.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                         ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
+; LAB2.vhd                         ; yes             ; User VHDL File  ; C:/Users/Administrador/Desktop/PS2_Keyboard/LAB2.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 142         ;
-;                                             ;             ;
-; Total combinational functions               ; 130         ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 51          ;
-;     -- 3 input functions                    ; 1           ;
-;     -- <=2 input functions                  ; 78          ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 72          ;
-;     -- arithmetic mode                      ; 58          ;
-;                                             ;             ;
-; Total registers                             ; 98          ;
-;     -- Dedicated logic registers            ; 98          ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 31          ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; reset~input ;
-; Maximum fan-out                             ; 95          ;
-; Total fan-out                               ; 727         ;
-; Average fan-out                             ; 2.51        ;
-+---------------------------------------------+-------------+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimated Total logic elements              ; 187             ;
+;                                             ;                 ;
+; Total combinational functions               ; 172             ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 84              ;
+;     -- 3 input functions                    ; 12              ;
+;     -- <=2 input functions                  ; 76              ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 110             ;
+;     -- arithmetic mode                      ; 62              ;
+;                                             ;                 ;
+; Total registers                             ; 120             ;
+;     -- Dedicated logic registers            ; 120             ;
+;     -- I/O registers                        ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 42              ;
+;                                             ;                 ;
+; Embedded Multiplier 9-bit elements          ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; ps2_clock~input ;
+; Maximum fan-out                             ; 72              ;
+; Total fan-out                               ; 993             ;
+; Average fan-out                             ; 2.64            ;
++---------------------------------------------+-----------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -209,9 +213,48 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |LAB2                      ; 130 (130)           ; 98 (98)                   ; 0           ; 0            ; 0       ; 0         ; 31   ; 0            ; |LAB2               ; LAB2        ; work         ;
+; |LAB2                      ; 172 (172)           ; 120 (120)                 ; 0           ; 0            ; 0       ; 0         ; 42   ; 0            ; |LAB2               ; LAB2        ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |LAB2|estado                                                                                                                                        ;
++------------------------+------------+--------------+---------------------+-----------------------+------------------------+-----------------------+-----------------+
+; Name                   ; estado.fin ; estado.listo ; estado.configcursor ; estado.limpiardisplay ; estado.encenderdisplay ; estado.configpantalla ; estado.encender ;
++------------------------+------------+--------------+---------------------+-----------------------+------------------------+-----------------------+-----------------+
+; estado.encender        ; 0          ; 0            ; 0                   ; 0                     ; 0                      ; 0                     ; 0               ;
+; estado.configpantalla  ; 0          ; 0            ; 0                   ; 0                     ; 0                      ; 1                     ; 1               ;
+; estado.encenderdisplay ; 0          ; 0            ; 0                   ; 0                     ; 1                      ; 0                     ; 1               ;
+; estado.limpiardisplay  ; 0          ; 0            ; 0                   ; 1                     ; 0                      ; 0                     ; 1               ;
+; estado.configcursor    ; 0          ; 0            ; 1                   ; 0                     ; 0                      ; 0                     ; 1               ;
+; estado.listo           ; 0          ; 1            ; 0                   ; 0                     ; 0                      ; 0                     ; 1               ;
+; estado.fin             ; 1          ; 0            ; 0                   ; 0                     ; 0                      ; 0                     ; 1               ;
++------------------------+------------+--------------+---------------------+-----------------------+------------------------+-----------------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; char[1..3,7]                          ; Stuck at GND due to stuck port data_in ;
+; char[6]                               ; Merged with char[0]                    ;
+; rw~reg0                               ; Stuck at GND due to stuck port data_in ;
+; lcd[7]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 7 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                        ;
++---------------+---------------------------+----------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
++---------------+---------------------------+----------------------------------------+
+; char[7]       ; Stuck at GND              ; lcd[7]~reg0                            ;
+;               ; due to stuck port data_in ;                                        ;
++---------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -219,12 +262,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 98    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 120   ;
+; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 87    ;
+; Number of registers using Asynchronous Clear ; 58    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 26    ;
+; Number of registers using Clock Enable       ; 66    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -240,27 +283,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |LAB2|lcd[4]~reg0           ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |LAB2|\comb_logic:contar[3] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 31                          ;
-; cycloneiii_ff         ; 98                          ;
-;     CLR               ; 61                          ;
+; boundary_port         ; 42                          ;
+; cycloneiii_ff         ; 120                         ;
+;     CLR               ; 32                          ;
+;     ENA               ; 8                           ;
 ;     ENA CLR           ; 26                          ;
-;     plain             ; 11                          ;
-; cycloneiii_lcell_comb ; 132                         ;
-;     arith             ; 58                          ;
-;         2 data inputs ; 58                          ;
-;     normal            ; 74                          ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 18                          ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 51                          ;
+;     ENA SCLR          ; 32                          ;
+;     plain             ; 22                          ;
+; cycloneiii_lcell_comb ; 175                         ;
+;     arith             ; 62                          ;
+;         2 data inputs ; 62                          ;
+;     normal            ; 113                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 12                          ;
+;         4 data inputs ; 84                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.50                        ;
-; Average LUT depth     ; 2.94                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.33                        ;
 +-----------------------+-----------------------------+
 
 
@@ -269,7 +325,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -279,27 +335,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Aug 24 11:04:33 2018
+    Info: Processing started: Mon Sep 03 11:08:34 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LAB2 -c LAB2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file lab2.vhd
-    Info (12022): Found design unit 1: LAB2-PS2 File: C:/Users/Estudiante/Desktop/LAB2/LAB2.vhd Line: 25
-    Info (12023): Found entity 1: LAB2 File: C:/Users/Estudiante/Desktop/LAB2/LAB2.vhd Line: 7
+    Info (12022): Found design unit 1: LAB2-PS2 File: C:/Users/Administrador/Desktop/PS2_Keyboard/LAB2.vhd Line: 30
+    Info (12023): Found entity 1: LAB2 File: C:/Users/Administrador/Desktop/PS2_Keyboard/LAB2.vhd Line: 7
 Info (12127): Elaborating entity "LAB2" for the top level hierarchy
-Info (13000): Registers with preset signals will power-up high File: C:/Users/Estudiante/Desktop/LAB2/LAB2.vhd Line: 89
+Warning (10541): VHDL Signal Declaration warning at LAB2.vhd(10): used implicit default value for signal "clkLED" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Administrador/Desktop/PS2_Keyboard/LAB2.vhd Line: 10
+Info (13000): Registers with preset signals will power-up high File: C:/Users/Administrador/Desktop/PS2_Keyboard/LAB2.vhd Line: 214
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "clkLED" is stuck at GND File: C:/Users/Administrador/Desktop/PS2_Keyboard/LAB2.vhd Line: 10
+    Warning (13410): Pin "lcd[7]" is stuck at GND File: C:/Users/Administrador/Desktop/PS2_Keyboard/LAB2.vhd Line: 90
+    Warning (13410): Pin "rw" is stuck at GND File: C:/Users/Administrador/Desktop/PS2_Keyboard/LAB2.vhd Line: 24
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 173 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 231 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 27 output pins
-    Info (21061): Implemented 142 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4813 megabytes
-    Info: Processing ended: Fri Aug 24 11:04:57 2018
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:41
+    Info (21059): Implemented 38 output pins
+    Info (21061): Implemented 189 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4816 megabytes
+    Info: Processing ended: Mon Sep 03 11:08:53 2018
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:36
 
 

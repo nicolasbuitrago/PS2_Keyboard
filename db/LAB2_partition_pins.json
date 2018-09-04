@@ -4,10 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "clkLED",
-					"strict" : false
-				},
-				{
 					"name" : "x",
 					"strict" : false
 				},
@@ -112,7 +108,43 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "lcd[0]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd[1]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd[2]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd[3]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd[4]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd[5]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd[6]",
+					"strict" : false
+				},
+				{
+					"name" : "enviar",
+					"strict" : false
+				},
+				{
+					"name" : "rs",
+					"strict" : false
+				},
+				{
+					"name" : "ps2_clock",
 					"strict" : false
 				},
 				{
@@ -120,7 +152,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "ps2_clock",
+					"name" : "clk",
 					"strict" : false
 				},
 				{
