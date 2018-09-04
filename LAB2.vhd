@@ -46,79 +46,42 @@ architecture PS2 of LAB2 is
 		variable ascii : std_logic_vector(7 downto 0);
 		begin
 			case num is
-			when X"1C"  => ascii := "01000001";
-
-			when X"32"  => ascii := "01000010";
-
-			when X"21"  => ascii := "01000011";
-
-			when X"23"  => ascii := "01000100";
-
-			when X"24"  => ascii := "01000101";
-
-			when X"2B"  => ascii := "01000110";
-
-			when X"34"  => ascii := "01000111";
-
-			when X"33"  => ascii := "01001000";
-
-			when X"43"  => ascii := "01001001";
-
-			when X"3B"  => ascii := "01001010";
-
-			when X"42"  => ascii := "01001011";
-
-			when X"4B"  => ascii := "01001100";
-
-			when X"3A"  => ascii := "01001101";
-
-			when X"31"  => ascii := "01001110";
-
-			when X"44"  => ascii := "01001111";
-
-			when X"4D"  => ascii := "01010000";
-
-			when X"15"  => ascii := "01010001";
-
-			when X"2D"  => ascii := "01010010";
-
-			when X"1B"  => ascii := "01010011";
-
-			when X"2C"  => ascii := "01010100";
-
-			when X"3C"  => ascii := "01010101";
-
-			when X"2A"  => ascii := "01010110";
-
-			when X"1D"  => ascii := "01010111";
-
-			when X"22"  => ascii := "01010111";
-
-			when X"35"  => ascii := "01011001";
-
-			when X"1A"  => ascii := "01011010";
-
-			when X"45"  => ascii := "00110000";
-
-			when X"16"  => ascii := "00110001";
-
-			when X"1E"  => ascii := "00110010";
-
-			when X"26"  => ascii := "00110011";
-
-			when X"25"  => ascii := "00110100";
-
-			when X"2E"  => ascii := "00110101";
-
-			when X"36"  => ascii := "00110110";
-
-			when X"3D"  => ascii := "00110111";
-
-			when X"3E"  => ascii := "00111000";
-
-			when X"46"  => ascii := "00111001";
-
-				
+				when X"1C"  => ascii := "01000001";--A
+				when X"32"  => ascii := "01000010";--B
+				when X"21"  => ascii := "01000011";--C
+				when X"23"  => ascii := "01000100";--D
+				when X"24"  => ascii := "01000101";--E
+				when X"2B"  => ascii := "01000110";--F
+				when X"34"  => ascii := "01000111";--G
+				when X"33"  => ascii := "01001000";--H
+				when X"43"  => ascii := "01001001";--I
+				when X"3B"  => ascii := "01001010";--J
+				when X"42"  => ascii := "01001011";--K
+				when X"4B"  => ascii := "01001100";--L
+				when X"3A"  => ascii := "01001101";--M
+				when X"31"  => ascii := "01001110";--N
+				when X"44"  => ascii := "01001111";--O
+				when X"4D"  => ascii := "01010000";--P
+				when X"15"  => ascii := "01010001";--Q
+				when X"2D"  => ascii := "01010010";--R
+				when X"1B"  => ascii := "01010011";--S
+				when X"2C"  => ascii := "01010100";--T
+				when X"3C"  => ascii := "01010101";--U
+				when X"2A"  => ascii := "01010110";--V
+				when X"1D"  => ascii := "01010111";--W
+				when X"22"  => ascii := "01010111";--Y
+				when X"35"  => ascii := "01011001";--X
+				when X"1A"  => ascii := "01011010";--Z
+				when X"45"  => ascii := "00110000";--0
+				when X"16"  => ascii := "00110001";--1
+				when X"1E"  => ascii := "00110010";--2
+				when X"26"  => ascii := "00110011";--3
+				when X"25"  => ascii := "00110100";--4
+				when X"2E"  => ascii := "00110101";--5
+				when X"36"  => ascii := "00110110";--6
+				when X"3D"  => ascii := "00110111";--7
+				when X"3E"  => ascii := "00111000";--8
+				when X"46"  => ascii := "00111001";--9				
 				when others => ascii := "00100000";
 			end case;
 		return std_logic_vector(ascii);
