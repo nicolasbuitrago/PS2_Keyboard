@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for LAB2
-Wed Sep  5 17:07:58 2018
+Wed Sep  5 17:33:34 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -104,12 +104,12 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.06        ;
+; Average used               ; 1.07        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   6.4%      ;
+;     Processor 2            ;   7.1%      ;
 +----------------------------+-------------+
 
 
@@ -404,12 +404,12 @@ No paths to report.
 ; Slack ; From Node ; To Node       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-----------+---------------+--------------+-------------+--------------+------------+------------+
 ; 0.375 ; code[2]   ; key[2]~reg0   ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.638      ; 1.199      ;
-; 0.440 ; code[0]   ; code[0]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; aux       ; aux           ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; code[0]   ; code[0]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; code[1]   ; code[1]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; code[3]   ; code[3]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
-; 0.440 ; code[4]   ; code[4]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; code[5]   ; code[5]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; code[4]   ; code[4]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; code[6]   ; code[6]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; code[7]   ; code[7]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; code[8]   ; code[8]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
@@ -1012,8 +1012,8 @@ No paths to report.
 ; 0.387 ; code[6]   ; code[6]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.387 ; code[7]   ; code[7]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.387 ; code[8]   ; code[8]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
-; 0.387 ; code[9]   ; code[9]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.387 ; code[10]  ; code[10]      ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
+; 0.387 ; code[9]   ; code[9]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.437 ; code[1]   ; key[1]~reg0   ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.575      ; 1.183      ;
 ; 0.467 ; code[5]   ; disp2[6]~reg0 ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.578      ; 1.216      ;
 ; 0.467 ; code[5]   ; disp2[0]~reg0 ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.578      ; 1.216      ;
@@ -1974,7 +1974,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Wed Sep  5 17:07:53 2018
+    Info: Processing started: Wed Sep  5 17:33:30 2018
 Info: Command: quartus_sta LAB2 -c LAB2
 Info: qsta_default_script.tcl version: #3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -2057,8 +2057,8 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 896 megabytes
-    Info: Processing ended: Wed Sep  5 17:07:58 2018
-    Info: Elapsed time: 00:00:05
+    Info: Processing ended: Wed Sep  5 17:33:34 2018
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 
 

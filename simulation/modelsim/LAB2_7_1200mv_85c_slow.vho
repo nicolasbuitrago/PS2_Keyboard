@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition"
 
--- DATE "09/05/2018 17:08:01"
+-- DATE "09/05/2018 17:33:37"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -568,11 +568,11 @@ SIGNAL \rs~reg0_q\ : std_logic;
 SIGNAL char : std_logic_vector(7 DOWNTO 0);
 SIGNAL i : std_logic_vector(31 DOWNTO 0);
 SIGNAL code : std_logic_vector(10 DOWNTO 0);
+SIGNAL \ALT_INV_disp2[6]~reg0_q\ : std_logic;
+SIGNAL \ALT_INV_disp1[6]~reg0_q\ : std_logic;
 SIGNAL \ALT_INV_reset~input_o\ : std_logic;
 SIGNAL \ALT_INV_ps2_clock~input_o\ : std_logic;
 SIGNAL \ALT_INV_estado.fin~q\ : std_logic;
-SIGNAL \ALT_INV_disp2[6]~reg0_q\ : std_logic;
-SIGNAL \ALT_INV_disp1[6]~reg0_q\ : std_logic;
 
 COMPONENT hard_block
     PORT (
@@ -599,11 +599,11 @@ ww_devclrn <= devclrn;
 ww_devpor <= devpor;
 
 \clk~inputclkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \clk~input_o\);
+\ALT_INV_disp2[6]~reg0_q\ <= NOT \disp2[6]~reg0_q\;
+\ALT_INV_disp1[6]~reg0_q\ <= NOT \disp1[6]~reg0_q\;
 \ALT_INV_reset~input_o\ <= NOT \reset~input_o\;
 \ALT_INV_ps2_clock~input_o\ <= NOT \ps2_clock~input_o\;
 \ALT_INV_estado.fin~q\ <= NOT \estado.fin~q\;
-\ALT_INV_disp2[6]~reg0_q\ <= NOT \disp2[6]~reg0_q\;
-\ALT_INV_disp1[6]~reg0_q\ <= NOT \disp1[6]~reg0_q\;
 auto_generated_inst : hard_block
 PORT MAP (
 	devoe => ww_devoe,

@@ -29,7 +29,7 @@ architecture PS2 of LAB2 is
 
 	type state_type is (encender, configpantalla,encenderdisplay, limpiardisplay, configcursor,listo,fin);    --Define dfferent states to control the LCD
 	signal estado: state_type;
-	signal i : integer := 0;
+	signal i, j : integer := 0;
 	signal code : std_logic_vector(10 downto 0);
 	signal char : std_logic_vector(7 downto 0);
 
