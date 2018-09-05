@@ -6,7 +6,7 @@ use IEEE.NUMERIC_STD.all;
 
 entity LAB2 is
 port(
-	--clk : in std_logic;	--Reloj del sistema						--PINY2
+	clk : in std_logic;	--Reloj del sistema						--PINY2
 	
 	ps2_data    :   in std_logic;				--Permite que el conteo avance	  					--sw16
 	ps2_clock : in  std_logic;	
@@ -209,7 +209,7 @@ begin
 				estado <= fin;
 			end if;
 		  when fin =>
-			if(aux=='1') then
+			if(aux='1') then
 				estado <= listo;
 			else
 				estado<= fin;
@@ -238,7 +238,7 @@ begin
 			i<=i+1;
 			
 			if(i=10) then --and code(8 downto 1) /= X"F0") then
-				if(aux=='1') then
+				if(aux='1') then
 					disp1<=num2disp(code(4 downto 1));
 					disp2<=num2disp(code(8 downto 5));
 					char<=num2ascii(code(8 downto 1));
