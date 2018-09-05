@@ -209,7 +209,11 @@ begin
 				estado <= fin;
 			end if;
 		  when fin =>
-			estado <= listo;
+			if(aux=='1') then
+				estado <= listo;
+			else
+				estado<= fin;
+			end if;
 	    when others =>
 			estado <= encender;
 	  end case;
