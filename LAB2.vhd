@@ -243,7 +243,7 @@ begin
 			--In this example we are just sending letter A, for this project you
 			--Should make it variable for what has been pressed on the keyboard.
 	    when listo =>	
-			if (contar = 0 and char /= "00000000" and code(8 downto 1) /= X"F0" and letDif = '1') then
+			if (contar = 0 and char /= "00000000" and code(8 downto 1) /= X"F0" and letDif = '0') then
 				rs <= '1';
 				rw <= '0';
 				enviar <= '1';
@@ -292,7 +292,7 @@ begin
 			disp2<=num2disp(X"0");
 			letDif<='1';
 			key<=(others=>'0');
---			char<=X"01";
+			char<=X"00";
 		elsif (ps2_clock' event and ps2_clock = '0') then
 			
 			code(i)<=ps2_data;			
