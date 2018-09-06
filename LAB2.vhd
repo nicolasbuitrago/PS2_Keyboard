@@ -32,7 +32,7 @@ architecture PS2 of LAB2 is
 	signal i, j : integer := 0;
 	signal code : std_logic_vector(10 downto 0);
 	signal char : std_logic_vector(7 downto 0) := "00000000";
---	signal num : 
+
 	signal aux, letDif : std_logic := '1';
 
 	constant milisegundos: integer := 50000;
@@ -80,7 +80,7 @@ architecture PS2 of LAB2 is
 				when X"3D"  => ascii := "00110111";--7
 				when X"3E"  => ascii := "00111000";--8
 				when X"46"  => ascii := "00111001";--9	
-				when X"29"	=> ascii := "00100000";--Espacio
+				when X"29"  => ascii := "00100000";--Espacio
 				when others => ascii := "00000000";-- null
 			end case;
 		return std_logic_vector(ascii);
@@ -116,7 +116,7 @@ architecture PS2 of LAB2 is
 begin
 
   comb_logic: process(clk,char)
-  variable contar: integer := 0;
+  variable contar, num: integer := 0;
   begin
 	if (clk'event and clk='1') then
 	  case estado is
@@ -192,23 +192,51 @@ begin
 				contar := 0;
 				estado <= listo;
 			end if;
-			
-			when home =>
-				if(contar=0)then
-					rs<='0';
-					rw<='0';
-					contar:=contar+1;
-					lcd<= "00000010";
-					enviar<='1';
-					estado<=home;
-				elsif (contar < 1*milisegundos) then
-					contar := contar + 1;
-					estado <= home;
+				
+---------------------------------------------------------------------------------------------------------------------------------------	
+				
+		when saltoLinea =>
+			if (contar = 0) then
+				rs <= '1';
+				rw <= '0';
+				enviar <= '1';
+				lcd <= X"20"; -- "00100000"
+				num := num + 1;
+				contar := contar +1;
+				estado <= saltoLinea;
+--				aux<='0';
+			elsif (contar < 1*milisegundos) then
+				contar := contar + 1;
+				estado <= saltoLinea;
+			else
+				enviar <= '0';
+				contar := 0;
+				if(num < 46)then
+					estado<= saltoLinea;
 				else
-					enviar <= '0';
-					contar := 0;
-					estado <= listo;
+					estado <= fin;
 				end if;
+			end if;
+
+		when home =>
+			if(contar=0)then
+				rs<='0';
+				rw<='0';
+				contar:=contar+1;
+				lcd<= "00000010";
+				num := 0;
+				enviar<='1';
+				estado<=home;
+			elsif (contar < 1*milisegundos) then
+				contar := contar + 1;
+				estado <= home;
+			else
+				enviar <= '0';
+				contar := 0;
+				estado <= listo;
+			end if;
+				
+---------------------------------------------------------------------------------------------------------------------------------------	
 			
 			
 			--The display is now configured now it you just can send data to de LCD 
@@ -220,7 +248,7 @@ begin
 				rw <= '0';
 				enviar <= '1';
 				lcd <= char; -- ascii de A
-				j<=j+1;
+				num := num + 1;
 				contar := contar +1;
 				estado <= listo;
 --				aux<='0';
@@ -234,11 +262,13 @@ begin
 			end if;
 		  when fin =>
 			if (reset = '1')then
-				j<=0;
+				num := 0;
 				estado <= limpiardisplay;
-			elsif(j=15) then
---				estado<=home;
-			elsif(i=10) then -- and code(8 downto 1) /= X"F0") then
+			elsif(num=16)then
+				estado<=saltoLinea;
+			elsif(num=62) then
+				estado<=home;
+			elsif(i=10) then -- letDif = '1'          and code(8 downto 1) /= X"F0") then
 				estado <= listo;
 			else
 				estado<= fin;
@@ -265,18 +295,17 @@ begin
 --			char<=X"01";
 		elsif (ps2_clock' event and ps2_clock = '0') then
 			
-			code(i)<=ps2_data;
-			
+			code(i)<=ps2_data;			
 			i<=i+1;
 			
 			if(i=10) then
 				
 				if (code(8 downto 1) /= X"F0" ) then
 					if(letDif = '1') then
-					disp1<=num2disp(code(4 downto 1));
-					disp2<=num2disp(code(8 downto 5));
-					char<=num2ascii(code(8 downto 1));
-					key<=code;
+						disp1<=num2disp(code(4 downto 1));
+						disp2<=num2disp(code(8 downto 5));
+						char<=num2ascii(code(8 downto 1));
+						key<=code;
 					end if;
 					letDif<= not letDif;
 --					letDif<= '0';
