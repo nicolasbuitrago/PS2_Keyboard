@@ -1,5 +1,5 @@
 Flow report for LAB2
-Wed Sep  5 17:33:38 2018
+Thu Sep 06 10:10:39 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Sep  5 17:33:38 2018       ;
+; Flow Status                        ; Successful - Thu Sep 06 10:10:39 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; LAB2                                        ;
 ; Top-level Entity Name              ; LAB2                                        ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 239 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 222 / 114,480 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 124 / 114,480 ( < 1 % )                     ;
-; Total registers                    ; 124                                         ;
+; Total logic elements               ; 245 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 234 / 114,480 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 125 / 114,480 ( < 1 % )                     ;
+; Total registers                    ; 125                                         ;
 ; Total pins                         ; 40 / 529 ( 8 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/05/2018 17:32:18 ;
+; Start date & time ; 09/06/2018 10:09:32 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; LAB2                ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 48751571177290.153618673814819         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 202898067257169.153624657211172        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -94,12 +94,12 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:28     ; 1.0                     ; 962 MB              ; 00:01:04                           ;
-; Fitter                    ; 00:00:34     ; 1.0                     ; 1446 MB             ; 00:00:46                           ;
-; Assembler                 ; 00:00:07     ; 1.0                     ; 826 MB              ; 00:00:07                           ;
-; TimeQuest Timing Analyzer ; 00:00:04     ; 1.1                     ; 896 MB              ; 00:00:04                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 1066 MB             ; 00:00:02                           ;
-; Total                     ; 00:01:15     ; --                      ; --                  ; 00:02:03                           ;
+; Analysis & Synthesis      ; 00:00:20     ; 1.0                     ; 4814 MB             ; 00:00:37                           ;
+; Fitter                    ; 00:00:23     ; 1.0                     ; 5748 MB             ; 00:00:33                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 4702 MB             ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.2                     ; 4868 MB             ; 00:00:05                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4676 MB             ; 00:00:03                           ;
+; Total                     ; 00:00:55     ; --                      ; --                  ; 00:01:23                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -108,11 +108,11 @@ refer to the applicable agreement for further details.
 +---------------------------+------------------+------------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +---------------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis      ; nicolas          ; Linux Mint ; 18         ; x86_64         ;
-; Fitter                    ; nicolas          ; Linux Mint ; 18         ; x86_64         ;
-; Assembler                 ; nicolas          ; Linux Mint ; 18         ; x86_64         ;
-; TimeQuest Timing Analyzer ; nicolas          ; Linux Mint ; 18         ; x86_64         ;
-; EDA Netlist Writer        ; nicolas          ; Linux Mint ; 18         ; x86_64         ;
+; Analysis & Synthesis      ; 088294-docent-p  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; 088294-docent-p  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; 088294-docent-p  ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; 088294-docent-p  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; 088294-docent-p  ; Windows 10 ; 10.0       ; x86_64         ;
 +---------------------------+------------------+------------+------------+----------------+
 
 

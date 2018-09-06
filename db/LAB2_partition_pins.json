@@ -132,6 +132,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "lcd[7]",
+					"strict" : false
+				},
+				{
 					"name" : "enviar",
 					"strict" : false
 				},

@@ -31,9 +31,9 @@ architecture PS2 of LAB2 is
 	signal estado: state_type;
 	signal i, j : integer := 0;
 	signal code : std_logic_vector(10 downto 0);
-	signal char : std_logic_vector(7 downto 0);
-
-	signal aux : std_logic := '1';
+	signal char : std_logic_vector(7 downto 0) := "00000000";
+--	signal num : 
+	signal aux, letDif : std_logic := '1';
 
 	constant milisegundos: integer := 50000;
 	constant microsegundos: integer := 50;
@@ -79,8 +79,9 @@ architecture PS2 of LAB2 is
 				when X"36"  => ascii := "00110110";--6
 				when X"3D"  => ascii := "00110111";--7
 				when X"3E"  => ascii := "00111000";--8
-				when X"46"  => ascii := "00111001";--9				
-				when others => ascii := "00100000";-- Espacio
+				when X"46"  => ascii := "00111001";--9	
+				when X"29"	=> ascii := "00100000";--Espacio
+				when others => ascii := "00000000";-- null
 			end case;
 		return std_logic_vector(ascii);
 	end num2ascii;
@@ -193,13 +194,14 @@ begin
 			--In this example we are just sending letter A, for this project you
 			--Should make it variable for what has been pressed on the keyboard.
 	    when listo =>	
-			if (contar = 0) then
+			if (contar = 0 and char /= "00000000" and code(8 downto 1) /= X"F0" and letDif = '1') then
 				rs <= '1';
 				rw <= '0';
 				enviar <= '1';
 				lcd <= char; -- ascii de A
 				contar := contar +1;
 				estado <= listo;
+--				aux<='0';
 			elsif (contar < 1*milisegundos) then
 				contar := contar + 1;
 				estado <= listo;
@@ -209,10 +211,13 @@ begin
 				estado <= fin;
 			end if;
 		  when fin =>
-			if(aux='1') then
+			if(i=10 and code(8 downto 1) /= X"F0") then
 				estado <= listo;
 			else
 				estado<= fin;
+--				if(letDif='1')then
+--					aux<='1';
+--				end if;
 			end if;
 	    when others =>
 			estado <= encender;
@@ -224,11 +229,11 @@ begin
     -- cocurrent process#1: Proceso que se encarga del reset y el cambio entre estados
     state_reg: process(ps2_clock, reset)
     begin
-		if reset = '1' then
+		if (reset = '1') then
 			i<=0;
 			disp1<=num2disp(X"0");
 			disp2<=num2disp(X"0");
-			aux<='1';
+			letDif<='1';
 			key<=(others=>'0');
 
 		elsif (ps2_clock' event and ps2_clock = '0') then
@@ -237,14 +242,19 @@ begin
 			
 			i<=i+1;
 			
-			if(i=10) then --and code(8 downto 1) /= X"F0") then
-				if(aux='1') then
+			if(i=10) then
+				
+				if (code(8 downto 1) /= X"F0" ) then
+					if(letDif = '1') then
 					disp1<=num2disp(code(4 downto 1));
 					disp2<=num2disp(code(8 downto 5));
 					char<=num2ascii(code(8 downto 1));
 					key<=code;
+					end if;
+					letDif<= not letDif;
+--					letDif<= '0';
 				end if;
-				aux<= not aux;
+				
 				i<=0;
 			end if;
 		end if;

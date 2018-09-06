@@ -3,19 +3,19 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -3.878
-TNS   : -165.356
+Slack : -4.484
+TNS   : -196.006
 
 Type  : Slow 1200mV 85C Model Setup 'ps2_clock'
-Slack : -3.304
-TNS   : -173.006
-
-Type  : Slow 1200mV 85C Model Hold 'ps2_clock'
-Slack : 0.375
-TNS   : 0.000
+Slack : -3.500
+TNS   : -204.482
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.384
+Slack : 0.386
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ps2_clock'
+Slack : 0.404
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ps2_clock'
@@ -24,22 +24,22 @@ TNS   : -100.660
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -64.680
+TNS   : -65.965
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -3.474
-TNS   : -147.526
+Slack : -4.068
+TNS   : -175.424
 
 Type  : Slow 1200mV 0C Model Setup 'ps2_clock'
-Slack : -2.928
-TNS   : -149.914
+Slack : -3.118
+TNS   : -178.567
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.337
+Slack : 0.339
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'ps2_clock'
-Slack : 0.352
+Slack : 0.374
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ps2_clock'
@@ -48,30 +48,30 @@ TNS   : -100.660
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -64.680
+TNS   : -65.965
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.312
-TNS   : -52.962
+Slack : -1.963
+TNS   : -82.243
 
 Type  : Fast 1200mV 0C Model Setup 'ps2_clock'
-Slack : -1.072
-TNS   : -44.187
+Slack : -1.191
+TNS   : -61.448
 
 Type  : Fast 1200mV 0C Model Hold 'ps2_clock'
-Slack : 0.109
+Slack : 0.172
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.173
+Slack : 0.175
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ps2_clock'
 Slack : -3.000
-TNS   : -91.964
+TNS   : -91.745
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -54.464
+TNS   : -55.451
 
 ------------------------------------------------------------
