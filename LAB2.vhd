@@ -27,7 +27,7 @@ end LAB2;
 
 architecture PS2 of LAB2 is
 
-	type state_type is (encender, configpantalla,encenderdisplay, limpiardisplay, configcursor,listo,fin);    --Define dfferent states to control the LCD
+	type state_type is (encender, configpantalla,encenderdisplay, limpiardisplay, configcursor,listo,fin,  home);    --Define dfferent states to control the LCD
 	signal estado: state_type;
 	signal i, j : integer := 0;
 	signal code : std_logic_vector(10 downto 0);
@@ -165,6 +165,8 @@ begin
 	    when limpiardisplay =>	
 			if (contar = 0) then
 				contar := contar +1;
+				rs<='0';
+				rw<='0';
 				lcd <= "00000001";				
 				enviar <= '1';
 				estado <= limpiardisplay;
@@ -190,6 +192,25 @@ begin
 				contar := 0;
 				estado <= listo;
 			end if;
+			
+			when home =>
+				if(contar=0)then
+					rs<='0';
+					rw<='0';
+					contar:=contar+1;
+					lcd<= "00000010";
+					enviar<='1';
+					estado<=home;
+				elsif (contar < 1*milisegundos) then
+					contar := contar + 1;
+					estado <= home;
+				else
+					enviar <= '0';
+					contar := 0;
+					estado <= listo;
+				end if;
+			
+			
 			--The display is now configured now it you just can send data to de LCD 
 			--In this example we are just sending letter A, for this project you
 			--Should make it variable for what has been pressed on the keyboard.
@@ -199,6 +220,7 @@ begin
 				rw <= '0';
 				enviar <= '1';
 				lcd <= char; -- ascii de A
+				j<=j+1;
 				contar := contar +1;
 				estado <= listo;
 --				aux<='0';
@@ -211,7 +233,12 @@ begin
 				estado <= fin;
 			end if;
 		  when fin =>
-			if(i=10 and code(8 downto 1) /= X"F0") then
+			if (reset = '1')then
+				j<=0;
+				estado <= limpiardisplay;
+			elsif(j=15) then
+--				estado<=home;
+			elsif(i=10) then -- and code(8 downto 1) /= X"F0") then
 				estado <= listo;
 			else
 				estado<= fin;
@@ -235,7 +262,7 @@ begin
 			disp2<=num2disp(X"0");
 			letDif<='1';
 			key<=(others=>'0');
-
+--			char<=X"01";
 		elsif (ps2_clock' event and ps2_clock = '0') then
 			
 			code(i)<=ps2_data;

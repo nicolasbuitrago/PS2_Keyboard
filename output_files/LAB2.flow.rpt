@@ -1,5 +1,5 @@
 Flow report for LAB2
-Thu Sep 06 10:10:39 2018
+Thu Sep 06 12:04:29 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Sep 06 10:10:39 2018       ;
+; Flow Status                        ; Successful - Thu Sep 06 12:04:29 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; LAB2                                        ;
 ; Top-level Entity Name              ; LAB2                                        ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 245 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 234 / 114,480 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 125 / 114,480 ( < 1 % )                     ;
-; Total registers                    ; 125                                         ;
+; Total logic elements               ; 292 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 282 / 114,480 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 157 / 114,480 ( < 1 % )                     ;
+; Total registers                    ; 157                                         ;
 ; Total pins                         ; 40 / 529 ( 8 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/06/2018 10:09:32 ;
+; Start date & time ; 09/06/2018 12:03:22 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; LAB2                ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 202898067257169.153624657211172        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 202898067257169.153625340201340        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -94,12 +94,12 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:20     ; 1.0                     ; 4814 MB             ; 00:00:37                           ;
-; Fitter                    ; 00:00:23     ; 1.0                     ; 5748 MB             ; 00:00:33                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 4702 MB             ; 00:00:05                           ;
-; TimeQuest Timing Analyzer ; 00:00:05     ; 1.2                     ; 4868 MB             ; 00:00:05                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4676 MB             ; 00:00:03                           ;
-; Total                     ; 00:00:55     ; --                      ; --                  ; 00:01:23                           ;
+; Analysis & Synthesis      ; 00:00:20     ; 1.0                     ; 4813 MB             ; 00:00:37                           ;
+; Fitter                    ; 00:00:24     ; 1.0                     ; 5744 MB             ; 00:00:37                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 4700 MB             ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.2                     ; 4870 MB             ; 00:00:04                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4674 MB             ; 00:00:03                           ;
+; Total                     ; 00:00:56     ; --                      ; --                  ; 00:01:26                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
