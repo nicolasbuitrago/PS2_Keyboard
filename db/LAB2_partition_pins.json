@@ -144,6 +144,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "rw",
+					"strict" : false
+				},
+				{
 					"name" : "ps2_clock",
 					"strict" : false
 				},

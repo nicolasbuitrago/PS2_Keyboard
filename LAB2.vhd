@@ -211,7 +211,7 @@ begin
 			else
 				enviar <= '0';
 				contar := 0;
-				if(num < 46)then
+				if(num < 40)then
 					estado<= saltoLinea;
 				else
 					estado <= fin;
@@ -266,7 +266,7 @@ begin
 				estado <= limpiardisplay;
 			elsif(num=16)then
 				estado<=saltoLinea;
-			elsif(num=62) then
+			elsif(num=56) then
 				estado<=home;
 			elsif(i=10) then -- letDif = '1'          and code(8 downto 1) /= X"F0") then
 				estado <= listo;
