@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for LAB2
-Thu Sep 06 14:30:45 2018
+Fri Sep  7 11:18:53 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -102,16 +102,14 @@ refer to the applicable agreement for further details.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.19        ;
-; Maximum used               ; 4           ;
+; Average used               ; 1.06        ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   6.3%      ;
-;     Processor 3            ;   6.2%      ;
-;     Processor 4            ;   6.0%      ;
 +----------------------------+-------------+
 
 
@@ -514,18 +512,18 @@ No paths to report.
 ; Slack ; From Node ; To Node       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-----------+---------------+--------------+-------------+--------------+------------+------------+
 ; 0.410 ; code[9]   ; key[9]~reg0   ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.101      ; 0.697      ;
-; 0.440 ; code[1]   ; code[1]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; code[8]   ; code[8]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; code[1]   ; code[1]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; code[7]   ; code[7]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; code[4]   ; code[4]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; code[6]   ; code[6]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
-; 0.440 ; code[2]   ; code[2]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
-; 0.440 ; code[0]   ; code[0]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; code[5]   ; code[5]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
-; 0.440 ; code[10]  ; code[10]      ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; code[3]   ; code[3]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
-; 0.440 ; code[9]   ; code[9]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; code[2]   ; code[2]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; letDif    ; letDif        ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; code[9]   ; code[9]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; code[10]  ; code[10]      ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; code[0]   ; code[0]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.581 ; code[0]   ; key[0]~reg0   ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.101      ; 0.868      ;
 ; 0.692 ; i[5]      ; i[5]          ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.921      ;
 ; 0.692 ; i[13]     ; i[13]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.921      ;
@@ -536,8 +534,8 @@ No paths to report.
 ; 0.693 ; i[29]     ; i[29]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.922      ;
 ; 0.694 ; i[17]     ; i[17]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.923      ;
 ; 0.694 ; i[27]     ; i[27]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.923      ;
-; 0.695 ; i[7]      ; i[7]          ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.924      ;
 ; 0.695 ; i[6]      ; i[6]          ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.924      ;
+; 0.695 ; i[7]      ; i[7]          ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.924      ;
 ; 0.695 ; i[9]      ; i[9]          ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.924      ;
 ; 0.695 ; i[22]     ; i[22]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.924      ;
 ; 0.695 ; i[31]     ; i[31]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.043      ; 0.924      ;
@@ -1005,18 +1003,18 @@ No paths to report.
 ; Slack ; From Node ; To Node       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-----------+---------------+--------------+-------------+--------------+------------+------------+
 ; 0.380 ; code[9]   ; key[9]~reg0   ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.089      ; 0.640      ;
-; 0.387 ; code[1]   ; code[1]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.387 ; code[8]   ; code[8]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
+; 0.387 ; code[1]   ; code[1]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.387 ; code[7]   ; code[7]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.387 ; code[4]   ; code[4]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.387 ; code[6]   ; code[6]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
+; 0.387 ; code[5]   ; code[5]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
+; 0.387 ; code[3]   ; code[3]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.387 ; code[2]   ; code[2]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.387 ; code[0]   ; code[0]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
-; 0.387 ; code[5]   ; code[5]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
-; 0.387 ; code[10]  ; code[10]      ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
-; 0.387 ; code[3]   ; code[3]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
-; 0.387 ; code[9]   ; code[9]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.387 ; letDif    ; letDif        ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
+; 0.387 ; code[9]   ; code[9]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
+; 0.387 ; code[10]  ; code[10]      ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.532 ; code[0]   ; key[0]~reg0   ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.089      ; 0.792      ;
 ; 0.631 ; i[13]     ; i[13]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.841      ;
 ; 0.631 ; i[15]     ; i[15]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.039      ; 0.841      ;
@@ -1485,18 +1483,18 @@ No paths to report.
 ; Slack ; From Node ; To Node       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-----------+---------------+--------------+-------------+--------------+------------+------------+
 ; 0.176 ; code[9]   ; key[9]~reg0   ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.055      ; 0.315      ;
-; 0.199 ; code[1]   ; code[1]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.307      ;
 ; 0.199 ; code[8]   ; code[8]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.307      ;
+; 0.199 ; code[1]   ; code[1]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.307      ;
 ; 0.199 ; code[7]   ; code[7]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.307      ;
 ; 0.199 ; code[4]   ; code[4]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.307      ;
 ; 0.199 ; code[6]   ; code[6]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.307      ;
 ; 0.199 ; code[5]   ; code[5]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.307      ;
+; 0.199 ; code[3]   ; code[3]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.307      ;
+; 0.199 ; letDif    ; letDif        ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.307      ;
+; 0.199 ; code[2]   ; code[2]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.307      ;
 ; 0.199 ; code[0]   ; code[0]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.307      ;
 ; 0.199 ; code[9]   ; code[9]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.307      ;
 ; 0.199 ; code[10]  ; code[10]      ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.307      ;
-; 0.199 ; code[3]   ; code[3]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.307      ;
-; 0.199 ; code[2]   ; code[2]       ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.307      ;
-; 0.199 ; letDif    ; letDif        ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.307      ;
 ; 0.249 ; code[0]   ; key[0]~reg0   ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.055      ; 0.388      ;
 ; 0.315 ; i[15]     ; i[15]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.423      ;
 ; 0.316 ; i[5]      ; i[5]          ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.424      ;
@@ -1507,9 +1505,9 @@ No paths to report.
 ; 0.317 ; i[11]     ; i[11]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.425      ;
 ; 0.317 ; i[17]     ; i[17]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.425      ;
 ; 0.317 ; i[19]     ; i[19]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.425      ;
-; 0.317 ; i[21]     ; i[21]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.425      ;
 ; 0.317 ; i[27]     ; i[27]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.425      ;
 ; 0.317 ; i[29]     ; i[29]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.425      ;
+; 0.317 ; i[21]     ; i[21]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.425      ;
 ; 0.318 ; i[8]      ; i[8]          ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.426      ;
 ; 0.318 ; i[9]      ; i[9]          ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.426      ;
 ; 0.318 ; i[14]     ; i[14]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.024      ; 0.426      ;
@@ -1560,9 +1558,9 @@ No paths to report.
 ; 0.453 ; code[1]   ; disp1[2]~reg0 ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.149      ; 0.686      ;
 ; 0.462 ; i[17]     ; i[18]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.028      ; 0.574      ;
 ; 0.462 ; i[19]     ; i[20]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.028      ; 0.574      ;
-; 0.462 ; i[21]     ; i[22]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.028      ; 0.574      ;
 ; 0.462 ; i[27]     ; i[28]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.028      ; 0.574      ;
 ; 0.462 ; i[29]     ; i[30]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.028      ; 0.574      ;
+; 0.462 ; i[21]     ; i[22]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.028      ; 0.574      ;
 ; 0.463 ; i[5]      ; i[6]          ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.026      ; 0.573      ;
 ; 0.463 ; i[13]     ; i[14]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.026      ; 0.573      ;
 ; 0.463 ; i[23]     ; i[24]         ; ps2_clock    ; ps2_clock   ; 0.000        ; 0.028      ; 0.575      ;
@@ -1980,11 +1978,11 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Sep 06 14:30:40 2018
+    Info: Processing started: Fri Sep  7 11:18:50 2018
 Info: Command: quartus_sta LAB2 -c LAB2
 Info: qsta_default_script.tcl version: #3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'LAB2.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
@@ -2062,9 +2060,9 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4867 megabytes
-    Info: Processing ended: Thu Sep 06 14:30:45 2018
-    Info: Elapsed time: 00:00:05
+    Info: Peak virtual memory: 894 megabytes
+    Info: Processing ended: Fri Sep  7 11:18:53 2018
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:04
 
 

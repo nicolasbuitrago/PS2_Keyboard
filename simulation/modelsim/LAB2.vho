@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition"
 
--- DATE "09/06/2018 14:30:50"
+-- DATE "09/07/2018 11:18:56"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -82,13 +82,13 @@ ENTITY 	LAB2 IS
 	ps2_data : IN std_logic;
 	ps2_clock : IN std_logic;
 	reset : IN std_logic;
-	key : BUFFER std_logic_vector(10 DOWNTO 0);
-	disp1 : BUFFER std_logic_vector(6 DOWNTO 0);
-	disp2 : BUFFER std_logic_vector(6 DOWNTO 0);
-	lcd : BUFFER std_logic_vector(7 DOWNTO 0);
-	enviar : BUFFER std_logic;
-	rs : BUFFER std_logic;
-	rw : BUFFER std_logic
+	key : OUT std_logic_vector(10 DOWNTO 0);
+	disp1 : OUT std_logic_vector(6 DOWNTO 0);
+	disp2 : OUT std_logic_vector(6 DOWNTO 0);
+	lcd : OUT std_logic_vector(7 DOWNTO 0);
+	enviar : OUT std_logic;
+	rs : OUT std_logic;
+	rw : OUT std_logic
 	);
 END LAB2;
 
@@ -379,7 +379,7 @@ SIGNAL \comb_logic:contar[31]~q\ : std_logic;
 SIGNAL \Equal0~7_combout\ : std_logic;
 SIGNAL \Equal0~8_combout\ : std_logic;
 SIGNAL \Equal0~9_combout\ : std_logic;
-SIGNAL \comb_logic:num[6]~7_combout\ : std_logic;
+SIGNAL \comb_logic:num[25]~7_combout\ : std_logic;
 SIGNAL \Mux14~4_combout\ : std_logic;
 SIGNAL \Mux14~5_combout\ : std_logic;
 SIGNAL \Mux14~0_combout\ : std_logic;
@@ -421,16 +421,16 @@ SIGNAL \Mux17~4_combout\ : std_logic;
 SIGNAL \Mux17~6_combout\ : std_logic;
 SIGNAL \Equal1~1_combout\ : std_logic;
 SIGNAL \comb_logic~0_combout\ : std_logic;
-SIGNAL \comb_logic:contar[2]~4_combout\ : std_logic;
-SIGNAL \comb_logic:num[6]~6_combout\ : std_logic;
+SIGNAL \comb_logic:contar[1]~4_combout\ : std_logic;
+SIGNAL \comb_logic:num[25]~4_combout\ : std_logic;
 SIGNAL \comb_logic:num[4]~q\ : std_logic;
 SIGNAL \comb_logic:num[4]~2\ : std_logic;
 SIGNAL \comb_logic:num[5]~1_combout\ : std_logic;
 SIGNAL \comb_logic:num[5]~q\ : std_logic;
 SIGNAL \comb_logic:num[5]~2\ : std_logic;
-SIGNAL \comb_logic:num[6]~3_combout\ : std_logic;
+SIGNAL \comb_logic:num[6]~1_combout\ : std_logic;
 SIGNAL \comb_logic:num[6]~q\ : std_logic;
-SIGNAL \comb_logic:num[6]~4\ : std_logic;
+SIGNAL \comb_logic:num[6]~2\ : std_logic;
 SIGNAL \comb_logic:num[7]~1_combout\ : std_logic;
 SIGNAL \comb_logic:num[7]~q\ : std_logic;
 SIGNAL \comb_logic:num[7]~2\ : std_logic;
@@ -485,9 +485,9 @@ SIGNAL \comb_logic:num[23]~2\ : std_logic;
 SIGNAL \comb_logic:num[24]~1_combout\ : std_logic;
 SIGNAL \comb_logic:num[24]~q\ : std_logic;
 SIGNAL \comb_logic:num[24]~2\ : std_logic;
-SIGNAL \comb_logic:num[25]~1_combout\ : std_logic;
+SIGNAL \comb_logic:num[25]~5_combout\ : std_logic;
 SIGNAL \comb_logic:num[25]~q\ : std_logic;
-SIGNAL \comb_logic:num[25]~2\ : std_logic;
+SIGNAL \comb_logic:num[25]~6\ : std_logic;
 SIGNAL \comb_logic:num[26]~1_combout\ : std_logic;
 SIGNAL \comb_logic:num[26]~q\ : std_logic;
 SIGNAL \comb_logic:num[26]~2\ : std_logic;
@@ -578,8 +578,8 @@ SIGNAL \LessThan0~4_combout\ : std_logic;
 SIGNAL \LessThan0~5_combout\ : std_logic;
 SIGNAL \Selector40~1_combout\ : std_logic;
 SIGNAL \estado.encender~q\ : std_logic;
-SIGNAL \comb_logic:contar[2]~3_combout\ : std_logic;
-SIGNAL \comb_logic:contar[2]~5_combout\ : std_logic;
+SIGNAL \comb_logic:contar[1]~3_combout\ : std_logic;
+SIGNAL \comb_logic:contar[1]~5_combout\ : std_logic;
 SIGNAL \comb_logic:contar[0]~q\ : std_logic;
 SIGNAL \comb_logic:contar[0]~2\ : std_logic;
 SIGNAL \comb_logic:contar[1]~1_combout\ : std_logic;
@@ -633,7 +633,7 @@ SIGNAL \estado~11_combout\ : std_logic;
 SIGNAL \Selector38~1_combout\ : std_logic;
 SIGNAL \Selector38~2_combout\ : std_logic;
 SIGNAL \estado.home~q\ : std_logic;
-SIGNAL \comb_logic:num[6]~5_combout\ : std_logic;
+SIGNAL \comb_logic:num[25]~3_combout\ : std_logic;
 SIGNAL \comb_logic:num[0]~q\ : std_logic;
 SIGNAL \comb_logic:num[0]~2\ : std_logic;
 SIGNAL \comb_logic:num[1]~1_combout\ : std_logic;
@@ -714,9 +714,9 @@ SIGNAL \Selector48~4_combout\ : std_logic;
 SIGNAL \WideOr8~combout\ : std_logic;
 SIGNAL \Selector42~1_combout\ : std_logic;
 SIGNAL \rw~reg0_q\ : std_logic;
-SIGNAL char : std_logic_vector(7 DOWNTO 0);
-SIGNAL code : std_logic_vector(10 DOWNTO 0);
 SIGNAL i : std_logic_vector(31 DOWNTO 0);
+SIGNAL code : std_logic_vector(10 DOWNTO 0);
+SIGNAL char : std_logic_vector(7 DOWNTO 0);
 SIGNAL \ALT_INV_reset~input_o\ : std_logic;
 SIGNAL \ALT_INV_ps2_clock~input_o\ : std_logic;
 SIGNAL \ALT_INV_estado.fin~q\ : std_logic;
@@ -4346,7 +4346,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[31]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -4404,9 +4404,9 @@ PORT MAP (
 	combout => \Equal0~9_combout\);
 
 -- Location: LCCOMB_X6_Y52_N18
-\comb_logic:num[6]~7\ : cycloneive_lcell_comb
+\comb_logic:num[25]~7\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comb_logic:num[6]~7_combout\ = (\estado.home~q\ & (!\Equal0~9_combout\ & ((!\estado.fin~q\) # (!\reset~input_o\)))) # (!\estado.home~q\ & (((!\estado.fin~q\)) # (!\reset~input_o\)))
+-- \comb_logic:num[25]~7_combout\ = (\estado.home~q\ & (!\Equal0~9_combout\ & ((!\estado.fin~q\) # (!\reset~input_o\)))) # (!\estado.home~q\ & (((!\estado.fin~q\)) # (!\reset~input_o\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4418,7 +4418,7 @@ PORT MAP (
 	datab => \reset~input_o\,
 	datac => \estado.fin~q\,
 	datad => \Equal0~9_combout\,
-	combout => \comb_logic:num[6]~7_combout\);
+	combout => \comb_logic:num[25]~7_combout\);
 
 -- Location: LCCOMB_X7_Y53_N0
 \Mux14~4\ : cycloneive_lcell_comb
@@ -5216,9 +5216,9 @@ PORT MAP (
 	combout => \comb_logic~0_combout\);
 
 -- Location: LCCOMB_X6_Y53_N14
-\comb_logic:contar[2]~4\ : cycloneive_lcell_comb
+\comb_logic:contar[1]~4\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comb_logic:contar[2]~4_combout\ = (\Equal0~9_combout\ & (((\letDif~q\ & \comb_logic~0_combout\)) # (!\estado.listo~q\)))
+-- \comb_logic:contar[1]~4_combout\ = (\Equal0~9_combout\ & (((\letDif~q\ & \comb_logic~0_combout\)) # (!\estado.listo~q\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5230,12 +5230,12 @@ PORT MAP (
 	datab => \Equal0~9_combout\,
 	datac => \letDif~q\,
 	datad => \comb_logic~0_combout\,
-	combout => \comb_logic:contar[2]~4_combout\);
+	combout => \comb_logic:contar[1]~4_combout\);
 
 -- Location: LCCOMB_X6_Y53_N18
-\comb_logic:num[6]~6\ : cycloneive_lcell_comb
+\comb_logic:num[25]~4\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comb_logic:num[6]~6_combout\ = ((\Selector40~0_combout\) # ((\estado.saltoLinea~q\ & \comb_logic:contar[2]~4_combout\))) # (!\comb_logic:num[6]~7_combout\)
+-- \comb_logic:num[25]~4_combout\ = ((\Selector40~0_combout\) # ((\estado.saltoLinea~q\ & \comb_logic:contar[1]~4_combout\))) # (!\comb_logic:num[25]~7_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5243,11 +5243,11 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \comb_logic:num[6]~7_combout\,
+	dataa => \comb_logic:num[25]~7_combout\,
 	datab => \estado.saltoLinea~q\,
-	datac => \comb_logic:contar[2]~4_combout\,
+	datac => \comb_logic:contar[1]~4_combout\,
 	datad => \Selector40~0_combout\,
-	combout => \comb_logic:num[6]~6_combout\);
+	combout => \comb_logic:num[25]~4_combout\);
 
 -- Location: FF_X5_Y54_N9
 \comb_logic:num[4]\ : dffeas
@@ -5259,8 +5259,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[4]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[4]~q\);
@@ -5293,17 +5293,17 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[5]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[5]~q\);
 
 -- Location: LCCOMB_X5_Y54_N12
-\comb_logic:num[6]~3\ : cycloneive_lcell_comb
+\comb_logic:num[6]~1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comb_logic:num[6]~3_combout\ = (\comb_logic:num[6]~q\ & (\comb_logic:num[5]~2\ $ (GND))) # (!\comb_logic:num[6]~q\ & (!\comb_logic:num[5]~2\ & VCC))
--- \comb_logic:num[6]~4\ = CARRY((\comb_logic:num[6]~q\ & !\comb_logic:num[5]~2\))
+-- \comb_logic:num[6]~1_combout\ = (\comb_logic:num[6]~q\ & (\comb_logic:num[5]~2\ $ (GND))) # (!\comb_logic:num[6]~q\ & (!\comb_logic:num[5]~2\ & VCC))
+-- \comb_logic:num[6]~2\ = CARRY((\comb_logic:num[6]~q\ & !\comb_logic:num[5]~2\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5314,8 +5314,8 @@ PORT MAP (
 	dataa => \comb_logic:num[6]~q\,
 	datad => VCC,
 	cin => \comb_logic:num[5]~2\,
-	combout => \comb_logic:num[6]~3_combout\,
-	cout => \comb_logic:num[6]~4\);
+	combout => \comb_logic:num[6]~1_combout\,
+	cout => \comb_logic:num[6]~2\);
 
 -- Location: FF_X5_Y54_N13
 \comb_logic:num[6]\ : dffeas
@@ -5326,9 +5326,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
-	d => \comb_logic:num[6]~3_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	d => \comb_logic:num[6]~1_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[6]~q\);
@@ -5336,8 +5336,8 @@ PORT MAP (
 -- Location: LCCOMB_X5_Y54_N14
 \comb_logic:num[7]~1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comb_logic:num[7]~1_combout\ = (\comb_logic:num[7]~q\ & (!\comb_logic:num[6]~4\)) # (!\comb_logic:num[7]~q\ & ((\comb_logic:num[6]~4\) # (GND)))
--- \comb_logic:num[7]~2\ = CARRY((!\comb_logic:num[6]~4\) # (!\comb_logic:num[7]~q\))
+-- \comb_logic:num[7]~1_combout\ = (\comb_logic:num[7]~q\ & (!\comb_logic:num[6]~2\)) # (!\comb_logic:num[7]~q\ & ((\comb_logic:num[6]~2\) # (GND)))
+-- \comb_logic:num[7]~2\ = CARRY((!\comb_logic:num[6]~2\) # (!\comb_logic:num[7]~q\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5347,7 +5347,7 @@ GENERIC MAP (
 PORT MAP (
 	datab => \comb_logic:num[7]~q\,
 	datad => VCC,
-	cin => \comb_logic:num[6]~4\,
+	cin => \comb_logic:num[6]~2\,
 	combout => \comb_logic:num[7]~1_combout\,
 	cout => \comb_logic:num[7]~2\);
 
@@ -5361,8 +5361,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[7]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[7]~q\);
@@ -5395,8 +5395,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[8]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[8]~q\);
@@ -5429,8 +5429,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[9]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[9]~q\);
@@ -5463,8 +5463,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[10]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[10]~q\);
@@ -5497,8 +5497,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[11]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[11]~q\);
@@ -5531,8 +5531,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[12]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[12]~q\);
@@ -5565,8 +5565,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[13]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[13]~q\);
@@ -5599,8 +5599,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[14]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[14]~q\);
@@ -5633,8 +5633,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[15]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[15]~q\);
@@ -5667,8 +5667,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[16]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[16]~q\);
@@ -5701,8 +5701,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[17]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[17]~q\);
@@ -5735,8 +5735,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[18]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[18]~q\);
@@ -5769,8 +5769,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[19]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[19]~q\);
@@ -5803,8 +5803,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[20]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[20]~q\);
@@ -5837,8 +5837,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[21]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[21]~q\);
@@ -5871,8 +5871,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[22]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[22]~q\);
@@ -5905,8 +5905,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[23]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[23]~q\);
@@ -5939,17 +5939,17 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[24]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[24]~q\);
 
 -- Location: LCCOMB_X5_Y53_N18
-\comb_logic:num[25]~1\ : cycloneive_lcell_comb
+\comb_logic:num[25]~5\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comb_logic:num[25]~1_combout\ = (\comb_logic:num[25]~q\ & (!\comb_logic:num[24]~2\)) # (!\comb_logic:num[25]~q\ & ((\comb_logic:num[24]~2\) # (GND)))
--- \comb_logic:num[25]~2\ = CARRY((!\comb_logic:num[24]~2\) # (!\comb_logic:num[25]~q\))
+-- \comb_logic:num[25]~5_combout\ = (\comb_logic:num[25]~q\ & (!\comb_logic:num[24]~2\)) # (!\comb_logic:num[25]~q\ & ((\comb_logic:num[24]~2\) # (GND)))
+-- \comb_logic:num[25]~6\ = CARRY((!\comb_logic:num[24]~2\) # (!\comb_logic:num[25]~q\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5960,8 +5960,8 @@ PORT MAP (
 	datab => \comb_logic:num[25]~q\,
 	datad => VCC,
 	cin => \comb_logic:num[24]~2\,
-	combout => \comb_logic:num[25]~1_combout\,
-	cout => \comb_logic:num[25]~2\);
+	combout => \comb_logic:num[25]~5_combout\,
+	cout => \comb_logic:num[25]~6\);
 
 -- Location: FF_X5_Y53_N19
 \comb_logic:num[25]\ : dffeas
@@ -5972,9 +5972,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
-	d => \comb_logic:num[25]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	d => \comb_logic:num[25]~5_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[25]~q\);
@@ -5982,8 +5982,8 @@ PORT MAP (
 -- Location: LCCOMB_X5_Y53_N20
 \comb_logic:num[26]~1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comb_logic:num[26]~1_combout\ = (\comb_logic:num[26]~q\ & (\comb_logic:num[25]~2\ $ (GND))) # (!\comb_logic:num[26]~q\ & (!\comb_logic:num[25]~2\ & VCC))
--- \comb_logic:num[26]~2\ = CARRY((\comb_logic:num[26]~q\ & !\comb_logic:num[25]~2\))
+-- \comb_logic:num[26]~1_combout\ = (\comb_logic:num[26]~q\ & (\comb_logic:num[25]~6\ $ (GND))) # (!\comb_logic:num[26]~q\ & (!\comb_logic:num[25]~6\ & VCC))
+-- \comb_logic:num[26]~2\ = CARRY((\comb_logic:num[26]~q\ & !\comb_logic:num[25]~6\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5993,7 +5993,7 @@ GENERIC MAP (
 PORT MAP (
 	datab => \comb_logic:num[26]~q\,
 	datad => VCC,
-	cin => \comb_logic:num[25]~2\,
+	cin => \comb_logic:num[25]~6\,
 	combout => \comb_logic:num[26]~1_combout\,
 	cout => \comb_logic:num[26]~2\);
 
@@ -6007,8 +6007,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[26]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[26]~q\);
@@ -6041,8 +6041,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[27]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[27]~q\);
@@ -6075,8 +6075,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[28]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[28]~q\);
@@ -6109,8 +6109,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[29]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[29]~q\);
@@ -6143,8 +6143,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[30]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[30]~q\);
@@ -6174,8 +6174,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[31]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[31]~q\);
@@ -6536,7 +6536,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	asdata => \comb_logic:contar[16]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	sload => VCC,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
@@ -6571,7 +6571,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	asdata => \comb_logic:contar[17]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	sload => VCC,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
@@ -6606,7 +6606,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	asdata => \comb_logic:contar[18]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	sload => VCC,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
@@ -6641,7 +6641,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	asdata => \comb_logic:contar[19]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	sload => VCC,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
@@ -6676,7 +6676,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	asdata => \comb_logic:contar[20]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	sload => VCC,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
@@ -6711,7 +6711,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	asdata => \comb_logic:contar[21]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	sload => VCC,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
@@ -6746,7 +6746,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	asdata => \comb_logic:contar[22]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	sload => VCC,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
@@ -6781,7 +6781,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	asdata => \comb_logic:contar[23]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	sload => VCC,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
@@ -6816,7 +6816,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[24]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -6850,7 +6850,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	asdata => \comb_logic:contar[25]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	sload => VCC,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
@@ -6885,7 +6885,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	asdata => \comb_logic:contar[26]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	sload => VCC,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
@@ -6920,7 +6920,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	asdata => \comb_logic:contar[27]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	sload => VCC,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
@@ -6955,7 +6955,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[28]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -6989,7 +6989,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[29]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -7005,7 +7005,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[30]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -7159,9 +7159,9 @@ PORT MAP (
 	q => \estado.encender~q\);
 
 -- Location: LCCOMB_X6_Y53_N24
-\comb_logic:contar[2]~3\ : cycloneive_lcell_comb
+\comb_logic:contar[1]~3\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comb_logic:contar[2]~3_combout\ = (\Equal0~10_combout\ & ((\estado.encender~q\ & ((\LessThan1~2_combout\))) # (!\estado.encender~q\ & (\LessThan0~5_combout\))))
+-- \comb_logic:contar[1]~3_combout\ = (\Equal0~10_combout\ & ((\estado.encender~q\ & ((\LessThan1~2_combout\))) # (!\estado.encender~q\ & (\LessThan0~5_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7173,12 +7173,12 @@ PORT MAP (
 	datab => \Equal0~10_combout\,
 	datac => \LessThan0~5_combout\,
 	datad => \LessThan1~2_combout\,
-	combout => \comb_logic:contar[2]~3_combout\);
+	combout => \comb_logic:contar[1]~3_combout\);
 
 -- Location: LCCOMB_X6_Y53_N8
-\comb_logic:contar[2]~5\ : cycloneive_lcell_comb
+\comb_logic:contar[1]~5\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comb_logic:contar[2]~5_combout\ = (!\comb_logic:contar[31]~q\ & (!\comb_logic:contar[2]~3_combout\ & ((!\comb_logic:contar[2]~4_combout\) # (!\estado.encender~q\))))
+-- \comb_logic:contar[1]~5_combout\ = (!\comb_logic:contar[31]~q\ & (!\comb_logic:contar[1]~3_combout\ & ((!\comb_logic:contar[1]~4_combout\) # (!\estado.encender~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7188,9 +7188,9 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \estado.encender~q\,
 	datab => \comb_logic:contar[31]~q\,
-	datac => \comb_logic:contar[2]~4_combout\,
-	datad => \comb_logic:contar[2]~3_combout\,
-	combout => \comb_logic:contar[2]~5_combout\);
+	datac => \comb_logic:contar[1]~4_combout\,
+	datad => \comb_logic:contar[1]~3_combout\,
+	combout => \comb_logic:contar[1]~5_combout\);
 
 -- Location: FF_X7_Y52_N1
 \comb_logic:contar[0]\ : dffeas
@@ -7202,7 +7202,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[0]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -7236,7 +7236,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[1]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -7270,7 +7270,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[2]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -7304,7 +7304,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[3]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -7338,7 +7338,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[4]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -7372,7 +7372,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[5]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -7406,7 +7406,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[6]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -7440,7 +7440,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[7]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -7474,7 +7474,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[8]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -7508,7 +7508,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[9]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -7542,7 +7542,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[10]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -7576,7 +7576,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[11]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -7610,7 +7610,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[12]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -7644,7 +7644,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[13]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -7678,7 +7678,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[14]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -7694,7 +7694,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:contar[15]~1_combout\,
-	sclr => \comb_logic:contar[2]~5_combout\,
+	sclr => \comb_logic:contar[1]~5_combout\,
 	ena => \ALT_INV_estado.fin~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -7815,9 +7815,9 @@ PORT MAP (
 	q => \estado.home~q\);
 
 -- Location: LCCOMB_X5_Y52_N6
-\comb_logic:num[6]~5\ : cycloneive_lcell_comb
+\comb_logic:num[25]~3\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comb_logic:num[6]~5_combout\ = (\estado.home~q\) # (\estado.fin~q\)
+-- \comb_logic:num[25]~3_combout\ = (\estado.home~q\) # (\estado.fin~q\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7827,7 +7827,7 @@ GENERIC MAP (
 PORT MAP (
 	datab => \estado.home~q\,
 	datad => \estado.fin~q\,
-	combout => \comb_logic:num[6]~5_combout\);
+	combout => \comb_logic:num[25]~3_combout\);
 
 -- Location: FF_X5_Y54_N1
 \comb_logic:num[0]\ : dffeas
@@ -7839,8 +7839,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[0]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[0]~q\);
@@ -7873,8 +7873,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[1]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[1]~q\);
@@ -7907,8 +7907,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[2]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[2]~q\);
@@ -7923,8 +7923,8 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \comb_logic:num[3]~1_combout\,
-	sclr => \comb_logic:num[6]~5_combout\,
-	ena => \comb_logic:num[6]~6_combout\,
+	sclr => \comb_logic:num[25]~3_combout\,
+	ena => \comb_logic:num[25]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \comb_logic:num[3]~q\);

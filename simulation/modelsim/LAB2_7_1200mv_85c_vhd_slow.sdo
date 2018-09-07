@@ -29,7 +29,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "LAB2")
-  (DATE "09/06/2018 14:30:50")
+  (DATE "09/07/2018 11:18:56")
   (VENDOR "Altera")
   (PROGRAM "Quartus Prime")
   (VERSION "Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition")
@@ -3375,7 +3375,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\comb_logic\:num\[6\]\~7\\)
+    (INSTANCE \\comb_logic\:num\[25\]\~7\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (1548:1548:1548) (1567:1567:1567))
@@ -4159,7 +4159,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\comb_logic\:contar\[2\]\~4\\)
+    (INSTANCE \\comb_logic\:contar\[1\]\~4\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (815:815:815) (878:878:878))
@@ -4175,7 +4175,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\comb_logic\:num\[6\]\~6\\)
+    (INSTANCE \\comb_logic\:num\[25\]\~4\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (751:751:751) (750:750:750))
@@ -4241,7 +4241,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\comb_logic\:num\[6\]\~3\\)
+    (INSTANCE \\comb_logic\:num\[6\]\~1\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (309:309:309) (398:398:398))
@@ -4849,7 +4849,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\comb_logic\:num\[25\]\~1\\)
+    (INSTANCE \\comb_logic\:num\[25\]\~5\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (309:309:309) (392:392:392))
@@ -5978,7 +5978,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\comb_logic\:contar\[2\]\~3\\)
+    (INSTANCE \\comb_logic\:contar\[1\]\~3\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (1392:1392:1392) (1416:1416:1416))
@@ -5994,7 +5994,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\comb_logic\:contar\[2\]\~5\\)
+    (INSTANCE \\comb_logic\:contar\[1\]\~5\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (1389:1389:1389) (1413:1413:1413))
@@ -6599,7 +6599,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\comb_logic\:num\[6\]\~5\\)
+    (INSTANCE \\comb_logic\:num\[25\]\~3\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (320:320:320) (409:409:409))

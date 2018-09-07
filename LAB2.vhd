@@ -8,13 +8,13 @@ entity LAB2 is
 port(
 	clk : in std_logic;	--Reloj del sistema						--PINY2
 	
-	ps2_data    :   in std_logic;				--Permite que el conteo avance	  					--sw16
-	ps2_clock : in  std_logic;	
+	ps2_data    :   in std_logic;				-- Informacion enviada por el teclado
+	ps2_clock : in  std_logic;	  --Reloj del teclado
 	
-	reset : in std_logic;			--									
-	key : out std_logic_vector(10 downto 0);
-	disp1: out std_logic_vector(6 downto 0);	--Vector que almacena el primer digito del conteo		--HEX0
-	disp2: out std_logic_vector(6 downto 0);	--Vector que almacena el segundo digito del conteo		--HEX1
+	reset : in std_logic;			--		sw que permite reiniciar los valores del altera							
+	key : out std_logic_vector(10 downto 0);  --Vector que almacena los valores amostrar en los LEDs
+	disp1: out std_logic_vector(6 downto 0);	--Vector que almacena el primer digito del scanCode  --HEX0
+	disp2: out std_logic_vector(6 downto 0);	--Vector que almacena el segundo digito del scan Code	--HEX1
 	
 	lcd:		out std_logic_vector(7 downto 0);  --LCD data pins
 	enviar : out std_logic;    --Send signal
@@ -28,12 +28,13 @@ end LAB2;
 architecture PS2 of LAB2 is
 
 	type state_type is (encender, configpantalla,encenderdisplay, limpiardisplay, configcursor,listo,fin,  home, saltoLinea);    --Define dfferent states to control the LCD
-	signal estado: state_type;
-	signal i, j : integer := 0;
-	signal code : std_logic_vector(10 downto 0);
-	signal char : std_logic_vector(7 downto 0) := "00000000";
+	signal estado: state_type; -- Controla el estado del LCD
+	signal i : integer := 0;  -- Controla la lectura de la informacion enviada por el teclado
+	signal code : std_logic_vector(10 downto 0); --Almacena de manera temporal los datos enviados por el teclado
+	signal char : std_logic_vector(7 downto 0) := "00000000"; --Almacena el codigo ASCII del scan Code que sera mostrado en el LCD
 
-	signal aux, letDif : std_logic := '1';
+	signal letDif : std_logic := '1'; -- Signal que conmuta cada vez que se lee un scancode del teclado y ayuda
+														--	a que solo se muestre en el LCD el scan code cuando se muestra
 
 	constant milisegundos: integer := 50000;
 	constant microsegundos: integer := 50;
@@ -204,7 +205,7 @@ begin
 				num := num + 1;
 				contar := contar +1;
 				estado <= saltoLinea;
---				aux<='0';
+--				<='0';
 			elsif (contar < 1*milisegundos) then
 				contar := contar + 1;
 				estado <= saltoLinea;
@@ -251,7 +252,7 @@ begin
 				num := num + 1;
 				contar := contar +1;
 				estado <= listo;
---				aux<='0';
+--				<='0';
 			elsif (contar < 1*milisegundos) then
 				contar := contar + 1;
 				estado <= listo;
@@ -260,6 +261,8 @@ begin
 				contar := 0;
 				estado <= fin;
 			end if;
+			
+			
 		  when fin =>
 			if (reset = '1')then
 				num := 0;
@@ -273,7 +276,7 @@ begin
 			else
 				estado<= fin;
 --				if(letDif='1')then
---					aux<='1';
+--					<='1';
 --				end if;
 			end if;
 	    when others =>

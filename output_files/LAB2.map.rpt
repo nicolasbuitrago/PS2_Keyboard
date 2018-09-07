@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LAB2
-Thu Sep 06 14:30:03 2018
+Fri Sep  7 11:18:07 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -46,7 +46,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Sep 06 14:30:03 2018       ;
+; Analysis & Synthesis Status        ; Successful - Fri Sep  7 11:18:07 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; LAB2                                        ;
 ; Top-level Entity Name              ; LAB2                                        ;
@@ -155,25 +155,24 @@ refer to the applicable agreement for further details.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                         ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
-; LAB2.vhd                         ; yes             ; User VHDL File  ; C:/Users/Administrador/Downloads/PortableGit32/PS2_Keyboard/LAB2.vhd ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                     ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                              ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
+; LAB2.vhd                         ; yes             ; User VHDL File  ; /home/nicolasbuitrago/Proyectos/PC1/PS2_Keyboard/LAB2.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -278,8 +277,8 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
-; 9:1                ; 32 bits   ; 192 LEs       ; 32 LEs               ; 160 LEs                ; Yes        ; |LAB2|\comb_logic:num[6]    ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |LAB2|\comb_logic:contar[2] ;
+; 9:1                ; 32 bits   ; 192 LEs       ; 32 LEs               ; 160 LEs                ; Yes        ; |LAB2|\comb_logic:num[25]   ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |LAB2|\comb_logic:contar[1] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 
 
@@ -315,7 +314,7 @@ Encoding Type:  One-Hot
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -325,15 +324,15 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Sep 06 14:29:43 2018
+    Info: Processing started: Fri Sep  7 11:17:44 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LAB2 -c LAB2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file lab2.vhd
-    Info (12022): Found design unit 1: LAB2-PS2 File: C:/Users/Administrador/Downloads/PortableGit32/PS2_Keyboard/LAB2.vhd Line: 28
-    Info (12023): Found entity 1: LAB2 File: C:/Users/Administrador/Downloads/PortableGit32/PS2_Keyboard/LAB2.vhd Line: 7
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file LAB2.vhd
+    Info (12022): Found design unit 1: LAB2-PS2 File: /home/nicolasbuitrago/Proyectos/PC1/PS2_Keyboard/LAB2.vhd Line: 28
+    Info (12023): Found entity 1: LAB2 File: /home/nicolasbuitrago/Proyectos/PC1/PS2_Keyboard/LAB2.vhd Line: 7
 Info (12127): Elaborating entity "LAB2" for the top level hierarchy
-Info (13000): Registers with preset signals will power-up high File: C:/Users/Administrador/Downloads/PortableGit32/PS2_Keyboard/LAB2.vhd Line: 289
+Info (13000): Registers with preset signals will power-up high File: /home/nicolasbuitrago/Proyectos/PC1/PS2_Keyboard/LAB2.vhd Line: 292
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -343,9 +342,9 @@ Info (21057): Implemented 357 device resources after synthesis - the final resou
     Info (21059): Implemented 36 output pins
     Info (21061): Implemented 317 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4815 megabytes
-    Info: Processing ended: Thu Sep 06 14:30:03 2018
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:37
+    Info: Peak virtual memory: 978 megabytes
+    Info: Processing ended: Fri Sep  7 11:18:07 2018
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:50
 
 
